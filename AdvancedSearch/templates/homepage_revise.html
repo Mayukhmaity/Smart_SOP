@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart SOP</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="{{ url_for('static', filename='style_reworked.css') }}">
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+   <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+   <script type="text/javascript" src="{{ url_for('static', filename='jquery/jquery.slim.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color:#1971cc!important;">
+    <div class="container">
+      <!--<a class="navbar-brand" href="#">Start Bootstrap</a>-->
+	<a class= "float-sm-left" href="https://www.pwc.in"> <img src="https://www.logolynx.com/images/logolynx/4f/4fd03f90014666e86c870d8b58f2749f.png" height="40px" width="77px"> </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Top Stories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Employee Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Walk me through</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+	<div class="row no-gutters" id="search_panel" ng-app="searchApp" ng-controller="searchController" >
+		<div class="col no-gutters col-md-5">
+		   <div class="leftside">
+		<div class="container">
+<h3 class=" text-center">Smart SOP</h3>
+<div class="messaging">
+      <div class="inbox_msg">
+        <div class="mesgs">
+          <div class="msg_history">
+            <!--<div class="incoming_msg">-->
+              <!--<div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>-->
+              <!--<div class="received_msg">-->
+                <!--<div class="received_withd_msg">-->
+                  <!--<p>Test which is a new approach to have all-->
+                    <!--solutions</p>-->
+                  <!--<span class="time_date"> 11:01 AM    |    June 9</span></div>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="outgoing_msg">-->
+              <!--<div class="sent_msg">-->
+                <!--<p>Test which is a new approach to have all-->
+                  <!--solutions</p>-->
+                <!--<span class="time_date"> 11:01 AM    |    June 9</span> </div>-->
+            <!--</div>-->
+            <!--<div data-loading></div>-->
+            <!--<div class="incoming_msg">-->
+              <!--<div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>-->
+              <!--<div class="received_msg">-->
+                <!--<div class="received_withd_msg">-->
+                  <!--<p>Test, which is a new approach to have</p>-->
+                  <!--<span class="time_date"> 11:01 AM    |    Yesterday</span></div>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div data-loading></div>-->
+
+            <div ng-repeat="q in querylist">
+            <div class="outgoing_msg">
+              <div class="sent_msg">
+                <p>//q//</p>
+                <span class="time_date"> //CurrentDate | date:'HH:mm'//    |    Today</span> </div>
+            </div>
+            <div class="incoming_msg"  ng-if="answerlist[$index]!=undefined">
+              <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+              <div class="received_msg">
+                <div class="received_withd_msg">
+                  <!--<div data-loading></div>-->
+                  <p>//answerlist[$index]//
+                  <a id="pdf_url" href="#" ng-click="showPdf(link)" align="center">Click here to know more</a></p>
+                  <span class="time_date">//CurrentDate | date:'HH:mm'//    |    Today | //rtime// secs</span></div>
+              </div>
+            </div>
+
+
+                  <div class="incoming_msg" ng-if="answerlist[$index]==undefined">
+              <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+              <div class="received_msg">
+                <div class="received_withd_msg">
+                  <!--<div data-loading></div>-->
+                  <p>Retrieving response <img src="{{ url_for('static', filename='loader30.gif') }}" style="width:20%;"/></p>
+                  <!--<a id="pdf_url" href="#" ng-click="showPdf(link)" align="center">Click here to know more</a></p>-->
+                  <!--<span class="time_date"> 11:01 AM    |    Today</span></div>-->
+              </div>
+            </div>
+                  </div>
+
+
+              </div>
+          </div>
+          <div class="type_msg">
+            <div class="input_msg_write">
+               <ul class="list-group" ng-model="hidethis" ng-hide="hidethis" style="border-radius: 25px;">
+                          <li class="list-group-item" ng-repeat="questiondata in questions | filter : query | limitTo: 5" ng-click="fillTextbox(questiondata)">//questiondata//</li>
+                     </ul>
+              <input id = "userBox" type="text"  ng-model="query" class="write_msg" placeholder="Ask your query" ng-keyup="loadQuestions()" ng-enter="getRequest()"/>
+              <button class="msg_send_btn" ng-click ="getRequest()" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div></div>
+		</div>
+		</div>
+		<div class="col no-gutters col-md-7">
+		   <div class="rightside">
+              <!--<a id="pdf_url" href="#" ng-click="showPdf(searchdata)" align="center" style="color:white;">Click here to know more</a>-->
+             <div id="frame" class="col-md-12" style="display: none; height:96.4%; width:100%;" >
+		      <a class="pull-right"  ng-click="closePdf()" style="color:white">X</a>
+			<iframe   id="render" width="100%" height="100%"></iframe>
+		</div>
+			<!--<iframe src="http://localhost:8888/web/viewer.html?file=Draft_HZL_O2C_SOP_(Metal_Sales).pdf" style="height:100%; width:100%"></iframe>-->
+		</div>
+		</div>
+	</div>
+	<script>
+		app.directive('ngEnter', function () {
+    return function (scope, element, attrs) {
+        element.bind("keydown keypress", function (event) {
+            if(event.which === 13) {
+                scope.$apply(function (){
+                    scope.$eval(attrs.ngEnter);
+                });
+
+                event.preventDefault();
+            }
+        });
+    };
+});
+	</script>
+  <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                $(document).scrollTop($(document).height());
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<title> Smart Digital SOPs </title> 
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+    <script src="https://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="/static/app.js"></script>
+  </head>
+  <body >
+    <a href="https://pwc.in"> <img src="pwc.jpg" height="100px" width="100px"> </img> </a>
+    <div  style="width:500px">
+          <div>
+            <h2>Smart SOPs Search Engine</h2>
+          </div>
+          <div style="margin:20px">
+            <p>
+                You can search for the query you want to be answered.
+            </p>
+          </div>
+          <div ng-app="searchApp" ng-controller="searchController">
+              <form onsubmit="doSearch()" ng-submit="doSearch()">
+                <input type="text" placeholder="Search for your query" name="keyword">
+                <input type="submit">
+              </form>
+              //myTxt//
+
+          </div>
+        <!--<script type="text/javascript">-->
+            <!--var app = angular.module("tut", [])-->
+            <!--app.controller("myCtrl", function($scope, $http)){-->
+            <!--$http.get("http://localhost:9000/search/doQuery")-->
+            <!--.then(function(response)){-->
+              <!--$scope.friends = response.data-->
+            <!--});-->
+            <!--});-->
+        <!--</script>-->
+    </div>
+  </body>
+</html>

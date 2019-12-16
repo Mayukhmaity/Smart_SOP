@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<title> Smart Digital SOPs </title> 
+  <head>
+	  <!-- Bootstrap core CSS -->
+	<!--<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">-->
+	  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />-->
+	  <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>-->
+	<!-- Material Design Bootstrap -->
+	<!--<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+	  <script type="text/javascript" src="{{ url_for('static', filename='particles.js') }}"></script>
+	  <script type="text/javascript" src="{{ url_for('static', filename='particle-app.js') }}"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"> </script>
+	<div class="topnav">
+	<a class="active" href="#">Home</a>
+	<a href="#">Top Stories</a>
+	<a href="#">Employee Search</a>
+	<a href="#">Walk Me Through</a>
+	</div>
+  </head>
+    <a href="https://pwc.in"> <img src="{{url_for('static', filename='pwc.jpg')}}" height="75px" width="100px"> </a>
+	<body>
+	 <!--<script type="text/javascript" src="{{ url_for('static', filename='particles.min.js') }}"></script>-->
+   <!-- Initialize a new AngularJS app and associate it
+        with a module named "instantSearch"-->
+	 <div id="particles-js">
+		 <div class="col-md-10" align="center" >
+		  <!--<h2> Smart SOPs Search Engine </h2>-->
+            <!--<p>-->
+               <!--Below, you can search for any query related to or included in your company SOPs. <i> Ready? </i>-->
+            <!--</p>-->
+		 </div>
+	 </div>
+
+    <!--<div class="row" id="search_panel" ng-app="searchApp" ng-controller="searchController" style="margin-top: -236px;" >-->
+		<!--<div class="container">-->
+		 <!--<br/>-->
+				<!--<div class="row justify-content-center">-->
+                        <!--<div class="col-md-6 col-lg-8">-->
+                            <!--<form class="card card-sm">-->
+                                <!--<div class="card-body row no-gutters align-items-center">-->
+                                    <!--&lt;!&ndash;<div class="col-auto">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<i class="fas fa-search h4 text-body"></i>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;end of col&ndash;&gt;-->
+                                    <!--<div class="col">-->
+                                        <!--<input class="form-control form-control-lg form-control-borderless" type="search" ng-model="query" placeholder="Enter your query" ng-keyup="loadQuestions()" >-->
+										<!--<ul class="list-group" ng-model="hidethis" ng-hide="hidethis">-->
+                         					 <!--<li class="list-group-item" ng-repeat="questiondata in questions | filter : query" ng-click="fillTextbox(questiondata)">//questiondata//</li>-->
+                     					<!--</ul>-->
+                                    <!--</div>-->
+                                    <!--&lt;!&ndash;end of col&ndash;&gt;-->
+                                    <!--<div class="col-auto">-->
+                                        <!--<button class="btn btn-lg btn-success" type="submit" ng-click ="getRequest()" style="position:fixed; top:50%; margin-left:4%"><i class="fas fa-search"></i> &nbsp Search</button>-->
+                                    <!--</div>-->
+                                    <!--&lt;!&ndash;end of col&ndash;&gt;-->
+                                <!--</div>-->
+                            <!--</form>-->
+                        <!--</div>-->
+                        <!--&lt;!&ndash;end of col&ndash;&gt;-->
+                    <!--</div>-->
+
+		  <!--<h2> Smart SOPs Search Engine </h2>-->
+            <!--<p>-->
+               <!--Below, you can search for any query related to or included in your company SOPs. <i> Ready? </i>-->
+            <!--</p>-->
+          <!--<div class="ui-widget active-cyan-3 active-cyan-4 mb-4" align="center">-->
+			<!--<input type="text"  ng-model="query" placeholder="Enter your query" ng-keyup="loadQuestions()" class="form-control">-->
+			  <!--<button type="submit" ng-click ="getRequest()"><i class="fa fa-search"></i></button>-->
+			  <!--<ul class="list-group" ng-model="hidethis" ng-hide="hidethis">-->
+                          <!--<li class="list-group-item" ng-repeat="questiondata in questions | filter : query" ng-click="fillTextbox(questiondata)">//questiondata//</li>-->
+                     <!--</ul>-->
+
+		  <!--<br/>-->
+		<!--&lt;!&ndash;<a href="Metal SOPs.pdf" target="d">&ndash;&gt;-->
+		<!--&lt;!&ndash;<i class="fas fa-search" ng-model = "search"> </i>&ndash;&gt;-->
+			  <!--&lt;!&ndash;<button ng-click ="getRequest()">Search</button>&ndash;&gt;-->
+				<!--&lt;!&ndash;<br/>&ndash;&gt;-->
+			  <!--//question//-->
+          <!--</div>-->
+         <!--<div class="col-md-10" align="center" style="margin-left:9%" >-->
+		  <!--<p id="para" align="center" input-highlight-text> //searchdata//</p>-->
+			  <!--<a id="pdf_url" href="#" ng-click="showPdf(link)" align="center" style="color:white;">Click here to know more</a>-->
+			<!--</div>-->
+			<!--<div class="col-md-1" align="center" ></div>-->
+		<!--<div id="frame" class="col" style="display: none;" >-->
+		<!--<span class="glyphicon glyphicon-arrow-left" ng-click="closePdf()"></span>-->
+			<!--<iframe id="render" width="100%" height="100%"></iframe>-->
+		<!--</div>-->
+			<!--</div>-->
+	<!--</div>-->
+		 <!--</div>-->
+
+	  <div class="row" id="search_panel" ng-app="searchApp" ng-controller="searchController" >
+		<div class="col-md-6" align="center" >
+			<div class="col-md-1" align="center" ></div>
+			<div class="col-md-10" align="center" >
+		  <h2> Smart SOPs Search Engine </h2>
+            <p>
+               Below, you can search for any query related to or included in your company SOPs. <i> Ready? </i>
+            </p>
+          <div class="ui-widget active-cyan-3 active-cyan-4 mb-4" align="center">
+			<input type="text"  ng-model="query" placeholder="Search your query" ng-keyup="loadQuestions()" class="form-control" style="border-radius: 10px;" ng-enter="getRequest()">
+			  <ul class="list-group" ng-model="hidethis" ng-hide="hidethis" style="border-radius: 25px;">
+                          <li class="list-group-item" ng-repeat="questiondata in questions | filter : query" ng-click="fillTextbox(questiondata)">//questiondata//</li>
+                     </ul>
+		<!--<a href="Metal SOPs.pdf" target="d">-->
+		<!--<i class="fas fa-search" ng-model = "search"> </i>-->
+
+			  <button class = "btn btn-primary btn-lg" ng-click ="getRequest()"style="border-radius: 12px; margin-top:5%">Search</button>
+				<br/>
+			  //question//
+          </div>
+			<div data-loading></div>
+		  <p id="para" align="center" ng-hide="myVar"> //searchdata//</p>
+			  <!--<a id="pdf_url" href="#" ng-click="showPdf(searchdata)" align="center" style="color:white;">Click here to know more</a>-->
+				<br>
+				<!--<a style="color:white;">Hide Answer: <input type="checkbox" ng-model="myVar"></a>-->
+			</div>
+			<!--<a href="#" ng-click="findString(searchdata[0][0])" id="click" style="color:white;">Highlight Answer</a>-->
+			<div class="col-md-1" align="center" ></div>
+        </div>
+		<!--<div id="frame" class="col-md-6" style="display: none;" >-->
+		<!--<a class="pull-right"  ng-click="closePdf()" style="color:white">X</a>-->
+			<!--<iframe   id="render" width="100%" height="100%"></iframe>-->
+		<!--</div>-->
+	</div>
+	 <!--<a href="#" Onclick="findString('//searchdata//')">show</a>-->
+  <!--<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>-->
+<script>
+ particlesJS.load('particles-js', '{{url_for('static', filename='particles.json')}}', function(){
+   		console.log('particles.json loaded...');
+   		});
+</script>
+	<script>
+		app.directive('ngEnter', function () {
+    return function (scope, element, attrs) {
+        element.bind("keydown keypress", function (event) {
+            if(event.which === 13) {
+                scope.$apply(function (){
+                    scope.$eval(attrs.ngEnter);
+                });
+
+                event.preventDefault();
+            }
+        });
+    };
+});
+	</script>
+<script>
+	findString = function findText(text) {
+  window.find(text);
+}
+</script>
+	<script>
+
+	</script>
+  </body>
+</html>
